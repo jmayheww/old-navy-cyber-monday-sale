@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Acorn Email Framework</title>
+    <!--[if mso]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <style>
+      table {border-collapse: collapse;}
+      .spacer,.divider {mso-line-height-rule: exactly;}
+      td,th,div,p,a {font-size: 16px; line-height: 25px;}
+      td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",Helvetica,Arial,sans-serif;}
+    </style>
+    <![endif]-->
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+
+        img {
+            border: 0;
+            line-height: 100%;
+            vertical-align: middle;
+        }
+
+        .col {
+            font-size: 16px;
+            line-height: 25px;
+            vertical-align: top;
+        }
+
+        @media screen {
+
+            .col,
+            td,
+            th,
+            div,
+            p {
+                font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+            }
+
+            .sans-serif {
+                font-family: 'Open Sans', Arial, sans-serif;
+            }
+
+            .serif {
+                font-family: 'Merriweather', Georgia, serif;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 632px) {
+            .container {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hide-on-mobile {
+                display: none !important;
+            }
+
+            .mobile-th {
+                display: block;
+                width: 100% !important;
+                box-sizing: border-box;
+            }
+
+            .col {
+                display: inline-block !important;
+                line-height: 23px;
+                width: 100% !important;
+            }
+
+            .col-sm-1 {
+                max-width: 25%;
+            }
+
+            .col-sm-2 {
+                max-width: 50%;
+            }
+
+            .col-sm-3 {
+                max-width: 75%;
+            }
+
+            .col-sm-third {
+                max-width: 33.33333%;
+            }
+
+            .col-sm-push-1 {
+                margin-left: 25%;
+            }
+
+            .col-sm-push-2 {
+                margin-left: 50%;
+            }
+
+            .col-sm-push-3 {
+                margin-left: 75%;
+            }
+
+            .col-sm-push-third {
+                margin-left: 33.33333%;
+            }
+
+            .full-width-sm {
+                display: table !important;
+                width: 100% !important;
+            }
+
+            .stack-sm-first {
+                display: table-header-group !important;
+            }
+
+            .stack-sm-last {
+                display: table-footer-group !important;
+            }
+
+            .stack-sm-top {
+                display: table-caption !important;
+                max-width: 100%;
+                padding-left: 0 !important;
+            }
+
+            .toggle-content {
+                max-height: 0;
+                overflow: auto;
+                transition: max-height .4s linear;
+                -webkit-transition: max-height .4s linear;
+            }
+
+            .toggle-trigger:hover+.toggle-content,
+            .toggle-content:hover {
+                max-height: 999px !important;
+            }
+
+            .show-sm {
+                display: inherit !important;
+                font-size: inherit !important;
+                line-height: inherit !important;
+                max-height: none !important;
+            }
+
+            .hide-sm {
+                display: none !important;
+            }
+
+            .align-sm-center {
+                display: table !important;
+                float: none;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .align-sm-left {
+                float: left;
+            }
+
+            .align-sm-right {
+                float: right;
+            }
+
+            .text-sm-center {
+                text-align: center !important;
+            }
+
+            .text-sm-left {
+                text-align: left !important;
+            }
+
+            .text-sm-right {
+                text-align: right !important;
+            }
+
+            .borderless-sm {
+                border: none !important;
+            }
+
+            .nav-sm-vertical .nav-item {
+                display: block;
+            }
+
+            .nav-sm-vertical .nav-item a {
+                display: inline-block;
+                padding: 4px 0 !important;
+            }
+
+            .spacer {
+                height: 0;
+            }
+
+            .p-sm-0 {
+                padding: 0 !important;
+            }
+
+            .p-sm-8 {
+                padding: 8px !important;
+            }
+
+            .p-sm-16 {
+                padding: 16px !important;
+            }
+
+            .p-sm-24 {
+                padding: 24px !important;
+            }
+
+            .pt-sm-0 {
+                padding-top: 0 !important;
+            }
+
+            .pt-sm-8 {
+                padding-top: 8px !important;
+            }
+
+            .pt-sm-16 {
+                padding-top: 16px !important;
+            }
+
+            .pt-sm-24 {
+                padding-top: 24px !important;
+            }
+
+            .pr-sm-0 {
+                padding-right: 0 !important;
+            }
+
+            .pr-sm-8 {
+                padding-right: 8px !important;
+            }
+
+            .pr-sm-16 {
+                padding-right: 16px !important;
+            }
+
+            .pr-sm-24 {
+                padding-right: 24px !important;
+            }
+
+            .pb-sm-0 {
+                padding-bottom: 0 !important;
+            }
+
+            .pb-sm-8 {
+                padding-bottom: 8px !important;
+            }
+
+            .pb-sm-16 {
+                padding-bottom: 16px !important;
+            }
+
+            .pb-sm-24 {
+                padding-bottom: 24px !important;
+            }
+
+            .pl-sm-0 {
+                padding-left: 0 !important;
+            }
+
+            .pl-sm-8 {
+                padding-left: 8px !important;
+            }
+
+            .pl-sm-16 {
+                padding-left: 16px !important;
+            }
+
+            .pl-sm-24 {
+                padding-left: 24px !important;
+            }
+
+            .px-sm-0 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            .px-sm-8 {
+                padding-right: 8px !important;
+                padding-left: 8px !important;
+            }
+
+            .px-sm-16 {
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+
+            .px-sm-24 {
+                padding-right: 24px !important;
+                padding-left: 24px !important;
+            }
+
+            .py-sm-0 {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .py-sm-8 {
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
+
+            .py-sm-16 {
+                padding-top: 16px !important;
+                padding-bottom: 16px !important;
+            }
+
+            .py-sm-24 {
+                padding-top: 24px !important;
+                padding-bottom: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0;padding:0;width:100%;word-break:break-word;-webkit-font-smoothing:antialiased;">
+
+    <div lang="en" style="display:none;"><!-- Add your preheader text here --></div>
+
+    <table lang="en" bgcolor="#FFF" cellpadding="16" cellspacing="0" role="presentation" width="100%">
+        <tr>
+            <td align="center">
+                <table class="container" bgcolor="#FFF" cellpadding="0" cellspacing="0" role="presentation"
+                    width="640px">
+
+                    <!-- Old Navy View in Browser Header -->
+
+                    <tr class="hide-on-mobile">
+                        <td align="center" valign="middle"
+                            style="font-size:12px;line-height:15px;color:#777777;padding:0 10px; width:100%; max-width: 640px">
+
+                            <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c26d9c52d79fb8cb100c39ee76df12c92480a4a7360dfea2e27f004ab6c3e976acb8b41505b5e67378a706ad7104c6d57cb8e813d86ea54a70d4a3c72103bfb7e"
+                                target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c26d9c52d79fb8cb100c39ee76df12c92480a4a7360dfea2e27f004ab6c3e976acb8b41505b5e67378a706ad7104c6d57cb8e813d86ea54a70d4a3c72103bfb7e&source=gmail&ust=1701325947112000&usg=AOvVaw2S0DG0uPE7ZZ1Nn9TskxU4"
+                                style="text-decoration:none">
+                                <span style="color:#368be6">
+                                    <span class="m_-7983129340960281129mobile-hidden">
+
+                                        <img data-emoji="🛷" class="an1" alt="🛷" aria-label="🛷"
+                                            src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f6f7/72.png"
+                                            loading="lazy" style="width: 100%; max-width: 20px;">
+                                        And FREE SHIPPING for
+                                        Navyist Rewards member orders of $50+
+
+                                    </span>
+                                </span>
+                            </a>
+                            View in
+                            <a href="https://view.email.oldnavy.com/?qs=4763ffac409a3f3fdf9f67240c811ec4375ea81a1f2d80d74dde8b703a08315ac499f14fe4a56432fe954115f30725cb24f190f476d1e4a918ca801f5088b4fb108455a3abf697c1c951d9c1913d5d74"
+                                target="_blank" style="color:#777777;text-decoration:none"
+                                data-saferedirecturl="https://www.google.com/url?q=https://view.email.oldnavy.com/?qs%3D4763ffac409a3f3fdf9f67240c811ec4375ea81a1f2d80d74dde8b703a08315ac499f14fe4a56432fe954115f30725cb24f190f476d1e4a918ca801f5088b4fb108455a3abf697c1c951d9c1913d5d74&source=gmail&ust=1701325947112000&usg=AOvVaw2Lw1gONmFqXowSHcEQG9oZ">
+
+                                <span style=" color:#777777;text-decoration:underline">
+                                    web browser
+                                </span>
+
+                            </a>
+
+                        </td>
+                    </tr>
+
+                    <!-- Old Navy Brand Banner -->
+                    <tr>
+
+                        <td align="center">
+
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="width: 100%; max-width: 640px;">
+                                <tr>
+
+                                    <td align="left" valign="top" style="width: 6%;"></td>
+
+                                    <td align="center">
+
+                                        <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9ce3a9464df4a01afc0f0a3095a894f8d4e11a60a7008d073a8292eeaa420cc028fd3345fd2db09d23824e90fbcf902c1e2e9fdee13bae77f1"
+                                            target="_blank"
+                                            data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9ce3a9464df4a01afc0f0a3095a894f8d4e11a60a7008d073a8292eeaa420cc028fd3345fd2db09d23824e90fbcf902c1e2e9fdee13bae77f1&source=gmail&ust=1701325947112000&usg=AOvVaw3gFdlip6RifUb__CAZMTX4">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_14_nnvwbv.png"
+                                                alt="Old Navy Logo" aria-label="Old Navy webpage link"
+                                                style="width: 88%; max-width: 200px; height: auto; padding: 10px 0px 0px 0px">
+                                            </img>
+
+                                        </a>
+
+                                    </td>
+
+                                    <td align="right" valign="top" style="width: 6%;"></td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <!-- Shopping Categories -->
+
+                    <tr class="hide-on-mobile">
+                        <td align="center" style="padding: 20px 0 0 0 ">
+
+
+
+
+
+
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"
+                                align="center" style="background-image:linear-gradient(#ffffff,#ffffff)!important"
+                                background="https://ci6.googleusercontent.com/proxy/lw65sP9ObUZDXGfH9Rh5HtlfYgGe2VOAuPvNeulPTWTNNlkX6eZuMSKYqRtMYTQqt2HFVmk48ZLjOTqaMsAMgQifzfR7BL22tr1kFG2u_wkxFxThEy2Kew=s0-d-e1-ft#https://image.email.gap.com/lib/fe9b13707564037c70/m/70/1x1_white.png">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" class="m_-7983129340960281129mobile-hidden" bgcolor="#FFFFFF"
+                                            style="padding:0 0 10px">
+                                            <table border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="640" align="center" nowrap="">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                role="presentation">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cf72f9c60271200faf39f41d305f84e813ce231c5e0e285fd08225aaec4beeac3c735f721fa7ea0905a04cdd1a6de5d051af2a17a9a70d564"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf72f9c60271200faf39f41d305f84e813ce231c5e0e285fd08225aaec4beeac3c735f721fa7ea0905a04cdd1a6de5d051af2a17a9a70d564&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw3plYkC4FdszV1cVnJIgVWq"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240104/unnamed_4_hyyuzn.jpg"
+                                                                                    width="76"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit">
+
+                                                                            </a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cd5d0c4d45d859391a502e035e4c9ab393594f8014bda52b1f4b798a12ff4020f2361efb231ac3a86c56d6a21012b935d85e9e1b150bce275"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cd5d0c4d45d859391a502e035e4c9ab393594f8014bda52b1f4b798a12ff4020f2361efb231ac3a86c56d6a21012b935d85e9e1b150bce275&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw1K2FbD5VJ3eVBpCJx_tOTV"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240183/unnamed_5_ff3jlw.jpg"
+                                                                                    width="86"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c505a5056f4494b32d31e2ef0e546e9080fe272e244074a430c34464f5b27d508c5a8d8a64e40c7c1c41b814ead3408b25dfa697f7b662c23"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c505a5056f4494b32d31e2ef0e546e9080fe272e244074a430c34464f5b27d508c5a8d8a64e40c7c1c41b814ead3408b25dfa697f7b662c23&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw2o73AVvEpylqWqMxM-Lgxx"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240183/unnamed_6_qtilpu.jpg"
+                                                                                    width="92"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c6b95ee60250cff771dc33e56ad51a090f24e5328dec6692bbc8d55c0c8f80092370b1c08bd3d1fbe40a4a5c1347cdb65d9efc6f41f45773b"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://res.cloudinary.com/daq5feofb/image/upload/v1701240183/unnamed_7_j07ljm.jpg"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240183/unnamed_7_j07ljm.jpg"
+                                                                                    width="66"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cb1acbf5da81bc6745ecbb8dd7d45554b68facc593637b6e4706d57e5ee41e192ce3215fc0b2706c9c689f698d335db10a89524cd52b145b0"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cb1acbf5da81bc6745ecbb8dd7d45554b68facc593637b6e4706d57e5ee41e192ce3215fc0b2706c9c689f698d335db10a89524cd52b145b0&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw12WH79o7V2EQBP2kbXUKZw"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240183/unnamed_8_qhjur6.jpg"
+                                                                                    width="72"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cbb7e89f79c88d67ad7138e7b5579e649cc632fc118333a537e9a2636ef91ee7a034be3285f5365d9338c953e098e5bb10ffd0b86ce97bdfc"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cbb7e89f79c88d67ad7138e7b5579e649cc632fc118333a537e9a2636ef91ee7a034be3285f5365d9338c953e098e5bb10ffd0b86ce97bdfc&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw3x19Bq2x2I6Ml08eefd2HW"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240182/unnamed_9_pkymkz.jpg"
+                                                                                    width="70"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c1d90fcaae35447982e8b5aee3af0f14ef3b246e9e4bf3fd049974968b8ca1b271143892a8b9b0407b641abedd4b1c5cae14c452cbef1de45"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c1d90fcaae35447982e8b5aee3af0f14ef3b246e9e4bf3fd049974968b8ca1b271143892a8b9b0407b641abedd4b1c5cae14c452cbef1de45&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw0RR0xJRH-iIPMBE_FS90gY"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240182/unnamed_10_vfvrbf.jpg"
+                                                                                    width="92"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                        <td><a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c123c1fc56435be2ee83e3ef2cd33fa59d0c27dbe5beb1385f614a761c11b6625fa605acd56488f9e744662a9a4ba7816e97b7d791bf2b52b"
+                                                                                style="display:block" target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c123c1fc56435be2ee83e3ef2cd33fa59d0c27dbe5beb1385f614a761c11b6625fa605acd56488f9e744662a9a4ba7816e97b7d791bf2b52b&amp;source=gmail&amp;ust=1701325947112000&amp;usg=AOvVaw1s2LO43bwgywsh955ql8Bh"><img
+                                                                                    alt="Display images to show real-time content"
+                                                                                    style="border:0;display:block"
+                                                                                    border="0"
+                                                                                    src="https://res.cloudinary.com/daq5feofb/image/upload/v1701240182/unnamed_11_ipcnu1.jpg"
+                                                                                    width="86"
+                                                                                    class="m_-7983129340960281129photo CToWUd"
+                                                                                    data-bit="iit"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td align="center">
+
+                            <!-- Personalized Shipping Banner -->
+
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="width: 100%; max-width: 640;">
+                                <tr>
+                                    <td align="center">
+
+                                        <a href="https://click.email.oldnavy.com/?qs=24eb3f949ac2b6df62f90809f3d482da2f3711b2830e7bab76ca6def09aee00414b0c079032a71ebdae53716bd9a7546ec2552b58199991a01b7a3f2806ac90e"
+                                            aria-label="Old Navy Website HomePage" target="_blank"
+                                            data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D24eb3f949ac2b6df62f90809f3d482da2f3711b2830e7bab76ca6def09aee00414b0c079032a71ebdae53716bd9a7546ec2552b58199991a01b7a3f2806ac90e&source=gmail&ust=1701325947113000&usg=AOvVaw0e7PJ7dSxETPql19b0ZyhM">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239661/unnamed_zc6ddl.jpg"
+                                                alt="Old Navy Personalized Shipping Promo Message"
+                                                style="width: 100%; max-width: 640px; height: auto; padding: 10px 0 0 0 ">
+                                            </img>
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <!-- Spacer -->
+
+                        <td align="center" valign="top" style="height: 10px;"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" style="width: 100%; max-width: 640px;">
+                            <!-- Cyber's On Promo Banner -->
+                            <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c7ae066f42f4b2b1152699e49c513e8369c910a0eb6288769e9f8de204f26f02724b69129c4cbf1b08e041ee14fcb3c1cde7330e9343256c0"
+                                aria-label="Old Navy Website HomePage" target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c7ae066f42f4b2b1152699e49c513e8369c910a0eb6288769e9f8de204f26f02724b69129c4cbf1b08e041ee14fcb3c1cde7330e9343256c0&source=gmail&ust=1701325947113000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
+
+                                <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_11_qukwgn.jpg"
+                                    alt="Display images to show real-time content" style="width: 100%;"
+                                    data-bit="iit" />
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="left" style="padding-bottom: 10px;">
+                            <!-- Shop Categories Placholder Section -->
+
+                            <table cellpadding="0" cellspacing="0" border="0" valign="top"
+                                style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
+
+
+                                <tr>
+                                    <td align="center" valign="middle" style="width: 25%;">
+                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239681/unnamed_bgtdrc.jpg"
+                                            alt="Shop Women Link" />
+                                    </td>
+                                    <td align="center" valign="middle" style="width: 25%;">
+                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239680/unnamed_1_jde8sb.jpg"
+                                            alt="Shop Men Link" />
+                                    </td>
+
+                                    <td align="center" valign="middle" style="width: 25%;">
+                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239680/unnamed_2_rdw5jr.jpg"
+                                            alt="Shop Girls Link" />
+                                    </td>
+
+                                    <td align="center" valign="middle" style="width: 25%;">
+                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239680/unnamed_3_hnvuum.jpg"
+                                            alt="Shop Boys Link" />
+                                    </td>
+
+
+                                </tr>
+
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <!-- Can't Not Click Ticker Tape Banner -->
+
+                        <td align="center" style="width: 100%; max-width: 640px; padding-bottom:10px">
+                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_2_vgkxfq.jpg"
+                                alt="Can't Not Click Banner Display Image" />
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <!-- Product Table Display -->
+
+                        <td align="center" valign="top">
+
+                            <table cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                class="product-display" style="width: 100%; max-width: 640px">
+
+                                <tr>
+
+                                    <th class="product-section-1 mobile-th">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+
+
+                                            <tr>
+
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_3_nbbd8g.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=407510032&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_6_esko3c.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </th>
+
+                                    <th class="product-section-2 mobile-th">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+
+
+                                            <tr>
+
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=730410012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_5_k4fazg.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=339228012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_4_dv9on7.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th class="product-section-3 mobile-th">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+
+
+                                            <tr>
+
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=415871012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701320842/unnamed_13_isgt1y.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=220381022&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_7_urwyf7.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </th>
+
+                                    <th class="product-section-4 mobile-th">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+
+
+                                            <tr>
+
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=807094012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701320945/unnamed_15_p4ly7l.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                                <td style="padding-right:12px;padding-bottom:12px">
+
+                                                    <a href="https://oldnavy.gap.com/browse/product.do?pid=770697002&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
+                                                        target="_blank" style="display: block;"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                                        <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701321029/unnamed_16_elm8ql.jpg"
+                                                            alt="Display images to show real-time content"
+                                                            style="border:0;display:block" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </th>
+                                </tr>
+                            </table>
+
+                        </td>
+
+
+                    </tr>
+
+                    <!-- Shopping Categories Table 3x3 -->
+
+                    <tr style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
+
+                        <td align="center" style="padding: 20px 0 0 0 ">
+
+                            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185233&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185233%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239661/unnamed_jm8ctv.png"
+                                                alt="Women's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1031099&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1031099%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_10_hqawfd.png"
+                                                alt="Mens's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185228&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185228%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_2_xgfdgh.png"
+                                                alt="Maternity Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185229&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185229%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_3_izvtct.png"
+                                                alt="Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185232&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="  https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185232%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_4_erny14.png"
+                                                alt="Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185224&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=165"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185224%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_5_qarsb5.png"
+                                                alt="Toddler Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185225&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=166"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185225%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_6_btn6j3.png"
+                                                alt="Toddler Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185226&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=165"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185226%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_7_ykigg6.png"
+                                                alt="Baby Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185227&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=166"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185227%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239660/unnamed_8_fzikxq.png"
+                                                alt="Baby Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Spacer -->
+
+                    <tr>
+
+                        <td align="center" valign="top" style="height: 20px;"></td>
+                    </tr>
+
+                    <!-- Today Only Promo Gif -->
+
+                    <tr>
+                        <td align="center" valign="top">
+                            <a href="https://oldnavy.gap.com/browse/category.do?cid=55474&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                aria-label="Old Navy Website HomePage" target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D24eb3f949ac2b6df62f90809f3d482da2f3711b2830e7bab76ca6def09aee00414b0c079032a71ebdae53716bd9a7546ec2552b58199991a01b7a3f2806ac90e&source=gmail&ust=1701325947113000&usg=AOvVaw1s2LO43bwgywsh955ql8Bh">
+                                <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239661/unnamed_hai0lh.gif"
+                                    alt="Today Only Promo Gif" style="width: 100%; max-width: 640px; height: auto;" />
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Product Category Links 2x2 -->
+
+                    <tr>
+                        <td align="center" valign="top" style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
+                            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185233&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185233%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&source=gmail&ust=1701325947114000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239661/unnamed_jm8ctv.png"
+                                                alt="Women's Clothes Category" />
+                                        </a>
+
+                                    </td>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1031099&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1031099%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&source=gmail&ust=1701325947114000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_10_hqawfd.png"
+                                                alt="Mens's Clothes Category" />
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=60050&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D60050%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947114000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_11_ztenlc.png"
+                                                alt="Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=60051&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D60051%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947114000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_12_g8aoqu.png"
+                                                alt="Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <!-- Spacer -->
+
+                    <tr>
+
+                        <td align="center" valign="top" style="height: 20px;"></td>
+                    </tr>
+
+                    <!-- Cyber's On Sale Banner -->
+
+                    <tr>
+
+                        <td align="center" valign="top" style="width: 100%; max-width: 640px;">
+                            <!-- Cyber's On Promo Banner -->
+                            <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9c7ae066f42f4b2b1152699e49c513e8369c910a0eb6288769e9f8de204f26f02724b69129c4cbf1b08e041ee14fcb3c1cde7330e9343256c0"
+                                aria-label="Old Navy Website HomePage" target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9c7ae066f42f4b2b1152699e49c513e8369c910a0eb6288769e9f8de204f26f02724b69129c4cbf1b08e041ee14fcb3c1cde7330e9343256c0&source=gmail&ust=1701325947113000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
+
+                                <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_11_qukwgn.jpg"
+                                    alt="Display images to show real-time content" style="width: 100%;"
+                                    data-bit="iit" />
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- All Sales Categories Table 3x3 -->
+
+                    <tr style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
+
+                        <td align="center" style="padding: 10px 0 0 0 ">
+
+                            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185233&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185233%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239661/unnamed_jm8ctv.png"
+                                                alt="Women's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1031099&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1031099%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_10_hqawfd.png"
+                                                alt="Mens's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185228&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185228%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_2_xgfdgh.png"
+                                                alt="Maternity Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185229&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185229%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_3_izvtct.png"
+                                                alt="Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185232&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="  https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185232%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_4_erny14.png"
+                                                alt="Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185224&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=165"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl=" https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185224%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
+
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_5_qarsb5.png"
+                                                alt="Toddler Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185225&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=166"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185225%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_6_btn6j3.png"
+                                                alt="Toddler Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185226&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=165"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185226%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_7_ykigg6.png"
+                                                alt="Baby Girl's Clothes Category" />
+                                        </a>
+                                    </td>
+                                    <td align="center" style="padding-right: 0px;">
+                                        <a href="https://oldnavy.gap.com/browse/category.do?cid=1185227&tid=onem003325&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&CD=ONNCCORE_OPR&DI=171098534#pageId=0&department=166"
+                                            rel="noopener noreferrer" target="_blank" style="display: block;"
+                                            data-saferedirecturl="
+                                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D1185227%26tid%3Donem003325%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26CD%3DONNCCORE_OPR%26DI%3D171098534&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT
+                                            ">
+
+                                            <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239660/unnamed_8_fzikxq.png"
+                                                alt="Baby Boy's Clothes Category" />
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Spacer -->
+
+                    <tr>
+
+                        <td align="center" valign="top" style="height: 20px;"></td>
+                    </tr>
+
+                    <!-- Life of the Party Banner -->
+
+                    <tr>
+                        <td align="center" valign="top">
+                            <a href="https://oldnavy.gap.com/browse/category.do?cid=3012629&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR&cvosrc=&segment="
+                                alt="Holiday Outfits Shopping Link" target="_blank" style="display: block;"
+                                data-saferedirecturl="
+                            https://www.google.com/url?q=https://oldnavy.gap.com/browse/category.do?cid%3D3012629%26tid%3Donem003325%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR%26cvosrc%3D%26segment%3D&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
+
+                                <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_12_tpl8oc.jpg"
+                                    alt="Life of the Party Banner"
+                                    style="width: 100%; max-width: 640px; height: auto;" />
+
+                            </a>
+
+                        </td>
+                    </tr>
+
+                    <!-- Holiday Blazer Advert -->
+
+                    <tr>
+
+                        <td align="center" valign="top" style="padding:5px 0">
+                            <a href="https://oldnavy.gap.com/browse/category.do?cid=3012629&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR&cvosrc="
+                                aria-label="Old Navy Website HomePage" target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D24eb3f949ac2b6df62f90809f3d482da2f3711b2830e7bab76ca6def09aee00414b0c079032a71ebdae53716bd9a7546ec2552b58199991a01b7a3f2806ac90e&source=gmail&ust=1701325947114000&usg=AOvVaw1s2LO43bwgywsh955ql8Bh">
+
+                                <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_13_uxlhx9.jpg"
+                                    alt="soft blazer holiday jacker"
+                                    style="width: 100%; max-width: 640px; height: auto;" />
+
+                            </a>
+                        </td>
+                    </tr>
+
+
+                </table>
+</body>
+
+</html>

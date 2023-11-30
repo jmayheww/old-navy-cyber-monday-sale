@@ -52,6 +52,8 @@
             text-align: center;
         }
 
+
+
         @media screen {
 
             .col,
@@ -75,6 +77,58 @@
             }
         }
 
+        @media only screen and (max-width: 640px) {
+            .mobile-th {
+                display: block;
+                width: 100% !important;
+                box-sizing: border-box;
+            }
+
+            .mobile-image-cell-1,
+            .mobile-image-cell-3,
+            .mobile-image-cell-5,
+            .mobile-image-cell-7 {
+                padding: 0;
+                margin: 0;
+                width: 320px;
+            }
+
+            .mobile-image-cell-1 img,
+            .mobile-image-cell-3 img,
+            .mobile-image-cell-5 img,
+            .mobile-image-cell-7 img {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100%;
+                /* Ensures images take full width of their container */
+            }
+
+            .mobile-image-cell-2,
+            .mobile-image-cell-4,
+            .mobile-image-cell-6,
+            .mobile-image-cell-8 {
+                padding-right: 0 !important;
+                margin: 0;
+                width: 320px;
+
+            }
+
+            .mobile-image-cell-2 img,
+            .mobile-image-cell-4 img,
+            .mobile-image-cell-6 img,
+            .mobile-image-cell-8 img {
+                padding-right: 0 !important;
+                width: 100%;
+                /* Ensures images take full width of their container */
+            }
+
+            .stack-on-mobile td {
+                display: block;
+                width: 100% !important;
+                padding: 5px 0 5px 0 !important;
+            }
+        }
+
         @media (max-width: 632px) {
             .container {
                 width: 100% !important;
@@ -84,7 +138,7 @@
         @media (max-width: 480px) {
 
             .footer-container {
-                width: 80% !important;
+                width: 100% !important;
             }
 
             .footer-link-1 {
@@ -103,6 +157,16 @@
 
             }
 
+            .footer-link-1 a {
+                font-size: 16px !important;
+                line-height: 18px !important;
+            }
+
+            .footer-link-2 a {
+                font-size: 16px !important;
+                line-height: 18px !important;
+            }
+
             .hide-on-mobile {
                 display: none !important;
             }
@@ -112,6 +176,7 @@
                 width: 100% !important;
                 box-sizing: border-box;
             }
+
 
             .col {
                 display: inline-block !important;
@@ -632,7 +697,7 @@
 
                     <tr>
 
-                        <td align="left" style="padding-bottom: 10px;">
+                        <td align="left" style="padding-bottom: 0px;">
                             <!-- Shop Categories Placholder Section -->
 
                             <table cellpadding="0" cellspacing="0" border="0" valign="top"
@@ -670,7 +735,7 @@
                     <tr>
                         <!-- Can't Not Click Ticker Tape Banner -->
 
-                        <td align="center" style="width: 100%; max-width: 640px; padding-bottom:10px">
+                        <td align="center" style="width: 100%; max-width: 640px; padding-bottom:0px">
                             <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_2_vgkxfq.jpg"
                                 alt="Can't Not Click Banner Display Image" />
                         </td>
@@ -689,28 +754,27 @@
 
                                     <th class="product-section-1 mobile-th">
                                         <table cellspacing="0" cellpadding="0" border="0" align="center">
-
-
                                             <tr>
-
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;padding-bottom:12px"
+                                                    class="mobile-image-cell-1">
 
                                                     <a href="https://click.email.oldnavy.com/?qs=032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239657/unnamed_3_nbbd8g.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;padding-bottom:12px"
+                                                    class="mobile-image-cell-2">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=407510032&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_6_esko3c.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
                                             </tr>
@@ -724,24 +788,26 @@
 
                                             <tr>
 
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;padding-bottom:12px"
+                                                    class="mobile-image-cell-3">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=730410012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_5_k4fazg.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:0px;padding-bottom:12px;"
+                                                    class="mobile-image-cell-4">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=339228012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239658/unnamed_4_dv9on7.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
                                             </tr>
@@ -758,24 +824,26 @@
 
                                             <tr>
 
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;padding-bottom:12px"
+                                                    class="mobile-image-cell-5">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=415871012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701320842/unnamed_13_isgt1y.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;padding-bottom:12px"
+                                                    class="mobile-image-cell-6">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=220381022&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701239659/unnamed_7_urwyf7.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
                                             </tr>
@@ -790,24 +858,24 @@
 
                                             <tr>
 
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td style="padding-right:12px;" class="mobile-image-cell-7">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=807094012&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701320945/unnamed_15_p4ly7l.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
-                                                <td style="padding-right:12px;padding-bottom:12px">
+                                                <td class="mobile-image-cell-8">
 
                                                     <a href="https://oldnavy.gap.com/browse/product.do?pid=770697002&rrec=true&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR#pdp-page-content"
                                                         target="_blank" style="display: block;"
                                                         data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D032d5a310d3d2f9cf7ae771f409eb03c1c6d290dad154850b1ffc017e868523092678b2301a5f1065ae56dda0622b57d7ef3933ccc98ff0b13bb76490da47381&source=gmail&ust=1701325947113000&usg=AOvVaw0Inee2x2j-vYoXCD9zZ6lT">
                                                         <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701321029/unnamed_16_elm8ql.jpg"
                                                             alt="Display images to show real-time content"
-                                                            style="border:0;display:block" />
+                                                            style="border:0;display:block; padding-right: 2px" />
                                                     </a>
                                                 </td>
                                             </tr>
@@ -827,7 +895,7 @@
 
                     <tr style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
 
-                        <td align="center" style="padding: 20px 0 0 0 ">
+                        <td align="center" style="padding: 14px 0 0 0 ">
 
                             <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
 
@@ -936,7 +1004,7 @@
 
                     <tr>
 
-                        <td align="center" valign="top" style="height: 20px;"></td>
+                        <td align="center" valign="top" style="height: 14px;"></td>
                     </tr>
 
                     <!-- Today Only Promo Gif -->
@@ -1022,7 +1090,7 @@
 
                     <tr>
 
-                        <td align="center" valign="top" style="height: 20px;"></td>
+                        <td align="center" valign="top" style="height: 14px;"></td>
                     </tr>
 
                     <!-- Cyber's On Sale Banner -->
@@ -1045,11 +1113,14 @@
 
                     </tr>
 
+                    <tr>
+                        <td align="center" valign="top" style="height: 14px; background-color: #FFF"></td>
+                    </tr>
                     <!-- All Sales Categories Table 3x3 -->
 
                     <tr style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
 
-                        <td align="center" style="padding: 10px 0 0 0 ">
+                        <td align="center" style="padding: 0px 0 0 0 ">
 
                             <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
 
@@ -1158,7 +1229,7 @@
 
                     <tr>
 
-                        <td align="center" valign="top" style="height: 20px;"></td>
+                        <td align="center" valign="top" style="height: 14px;"></td>
                     </tr>
 
                     <!-- Life of the Party Banner -->
@@ -1183,7 +1254,7 @@
 
                     <tr>
 
-                        <td align="center" valign="top" style="padding:5px 0">
+                        <td align="center" valign="top" style="padding:0px">
                             <a href="https://oldnavy.gap.com/browse/category.do?cid=3012629&tid=onem003325&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR&cvosrc="
                                 aria-label="Old Navy Website HomePage" target="_blank"
                                 data-saferedirecturl="https://www.google.com/url?q=https://click.email.oldnavy.com/?qs%3D24eb3f949ac2b6df62f90809f3d482da2f3711b2830e7bab76ca6def09aee00414b0c079032a71ebdae53716bd9a7546ec2552b58199991a01b7a3f2806ac90e&source=gmail&ust=1701325947114000&usg=AOvVaw1s2LO43bwgywsh955ql8Bh">
@@ -1314,7 +1385,7 @@
                     <!-- Spacer -->
 
                     <tr>
-                        <td align="center" valign="top" style="height: 20px;"></td>
+                        <td align="center" valign="top" style="height: 14px;"></td>
                     </tr>
 
                     <!-- Additional 30% off Cyber's On Sale Banner Membership Signup -->
@@ -1337,7 +1408,7 @@
 
                     <tr>
 
-                        <td align="center" valign="top" style="padding-top: 20px">
+                        <td align="center" valign="top" style="padding-top: 14px">
                             <a href="https://oldnavy.gap.com/?tid=onem013359&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR&ilp_goal_spend=366&mi_current_value=134"
                                 aria-label="Old Navy Website HomePage" target="_blank"
                                 data-saferedirecturl="https://www.google.com/url?q=https://oldnavy.gap.com/?tid%3Donem013359%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR%26ilp_goal_spend%3D366%26mi_current_value%3D134&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
@@ -1350,48 +1421,46 @@
                     </tr>
 
                     <!-- 2x2 Benefits and Shop Now Buttons -->
+                    <tr class="stack-on-mobile" style="width: 100%; max-width: 640px; padding: 0px 0 0 0 ">
 
-                    <tr>
-
-                        <td align="center" valign="top" style="padding-top: 5px">
+                        <td align="center" valign="top" style="padding: 5px 0px 0px 0px;">
 
                             <table cellpadding="0" cellspacing="0" border="0" role="presentation"
                                 style="width:100%; max-width: 640px">
 
                                 <tr>
-
-                                    <td align="center">
+                                    <td align="left" valign="top">
                                         <a href="https://oldnavy.gap.com/customerService/info.do?cid=1095422&tid=onem013359&mweb=true&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR"
-                                            aria-label="Old Navy Rewards Page" target="_blank"
+                                            aria-label="Old Navy Rewards Page" target="_blank" style="display: block;"
                                             data-saferedirecturl="
-                                            https://www.google.com/url?q=https://oldnavy.gap.com/customerService/info.do?cid%3D1095422%26tid%3Donem013359%26mweb%3Dtrue%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
+                                        https://www.google.com/url?q=https://oldnavy.gap.com/customerService/info.do?cid%3D1095422%26tid%3Donem013359%26mweb%3Dtrue%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
 
                                             <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701326958/unnamed_22_r3jgcl.jpg"
-                                                alt="Display images to show real-time content" style="width: 100%;"
-                                                data-bit="iit" />
+                                                alt="Display images to show real-time content" data-bit="iit" />
                                         </a>
+
                                     </td>
-                                    <td align="center">
+                                    <td align="right" valign="top">
                                         <a href="https://oldnavy.gap.com/?tid=onem013359&mi_u=171098534&EV=ONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023&DI=171098534&CD=ONNCCORE_OPR"
-                                            aria-label="Old Navy Home Page" target="_blank"
+                                            aria-label="Old Navy Home Page" target="_blank" style="display: block;"
                                             data-saferedirecturl="
-                                            https://www.google.com/url?q=https://oldnavy.gap.com/?tid%3Donem013359%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
+                                        https://www.google.com/url?q=https://oldnavy.gap.com/?tid%3Donem013359%26mi_u%3D171098534%26EV%3DONUSFF6PMCPATHCJOB353804_MENLSPILPNCCRE11272023%26DI%3D171098534%26CD%3DONNCCORE_OPR&source=gmail&ust=1701325947114000&usg=AOvVaw1SguHFG9s8L2MnyGw8hIf5">
 
 
                                             <img src="https://res.cloudinary.com/daq5feofb/image/upload/v1701326958/unnamed_23_efguih.jpg"
-                                                alt="Display images to show real-time content" style="width: 100%;"
-                                                data-bit="iit" />
+                                                alt="Display images to show real-time content" data-bit="iit" />
                                         </a>
                                     </td>
+
                                 </tr>
                             </table>
-                        </td>
                     </tr>
+
 
                     <!-- Get It Today Table Links -->
 
                     <tr>
-                        <td align="center" valign="top" style="padding-top: 5px">
+                        <td align="center" valign="top">
                             <table cellpadding="0" cellspacing="0" border="0" role="presentation"
                                 style="width:100%; max-width: 640px">
 
